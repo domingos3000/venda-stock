@@ -1,7 +1,13 @@
 import Logo from "./../../assets/venda-stock-logotipo.png";
-
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+
+    const {register, handleSubmit} = useForm();
+
+    const getDataOnSubmit = async (data: any) =>{
+        console.log(data)
+    }
 
     return(
         <div className="flex flex-col h-screen">
@@ -30,13 +36,13 @@ const Login = () => {
                             </header>  
 
 
-                            <form action="" className="flex flex-col">
+                            <form onSubmit={handleSubmit(getDataOnSubmit)} action="" className="flex flex-col">
                                 <label htmlFor="" className="text-blue-800 text-sm mb-3">Email:</label>
                                 
-                                <input type="text" className="h-10 bg-zinc-100 border border-zinc-300 outline-0 px-4 rounded text-zinc-800" />
+                                <input {...register("email")} type="text" className="h-10 bg-zinc-100 border border-zinc-300 outline-0 px-4 rounded text-zinc-800" />
 
                                 <label htmlFor="" className="text-blue-800 text-sm my-3">Password:</label>
-                                <input type="password" className="h-10 bg-zinc-100 border border-zinc-300 outline-0 px-4 rounded text-zinc-800"/>
+                                <input {...register("password")} type="password" className="h-10 bg-zinc-100 border border-zinc-300 outline-0 px-4 rounded text-zinc-800"/>
 
                                 <div className="flex items-center justify-center">
                                     <button className="bg-blue-500 h-10 text-white w-fit px-10 rounded mt-4">

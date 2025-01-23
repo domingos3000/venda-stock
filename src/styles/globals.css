@@ -7,3 +7,12 @@
     margin: 0 auto;
     padding: 0 2%;
 }
+
+* {
+    font-family: "Noto sans";
+    font-weight: 400;
+}
+
+input {
+    /* outline: 0; */
+}
